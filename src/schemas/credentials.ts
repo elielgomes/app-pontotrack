@@ -1,0 +1,10 @@
+import { z } from "zod";
+
+export const credentialsSchema = z.object({
+  email: z.string().email({
+    message: "Preencha o e-mail corretamente",
+  }),
+  password: z.string().min(6, {
+    message: "Preencha a senha corretamente",
+  }),
+});
