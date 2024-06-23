@@ -1,19 +1,14 @@
+import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
-const envSchema = z.object({
-  NODE_ENV: z.enum(["development", "production", "test"]),
-  NEXT_PUBLIC_API_URL: z.string().url(),
-  NEXT_PUBLIC_APP_URL: z.string().url(),
+export const env = createEnv({
+  client: {
+    NEXT_PUBLIC_APP_URL: z.string().url(),
+    NEXT_PUBLIC_API_URL: z.string().url(),
+  },
+  server: {},
+  runtimeEnv: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  },
 });
-
-const parsedEnv = envSchema.safeParse(process.env);
-
-if (!parsedEnv.success) {
-  console.error(
-    "Erro ao validar variáveis de ambiente:",
-    parsedEnv.error.format()
-  );
-  process.exit(1);
-}
-
-export const env = parsedEnv.data;
