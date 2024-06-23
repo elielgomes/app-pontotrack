@@ -8,3 +8,5 @@ export const credentialsSchema = z.object({
     message: "Preencha a senha corretamente",
   }),
 });
+
+export type CredentialsSchema = z.infer<typeof credentialsSchema>;
