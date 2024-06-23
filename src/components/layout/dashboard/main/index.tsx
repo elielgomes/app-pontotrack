@@ -25,7 +25,7 @@ export const MainWrapper: React.FC<ContentBaseProps<HTMLDivElement>> = ({
   return (
     <main
       className={cn(
-        "flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6",
+        "flex flex-1 container flex-col gap-4 lg:gap-6 pt-6 lg:pt-8",
         className
       )}
     >

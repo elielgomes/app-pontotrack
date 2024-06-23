@@ -27,13 +27,13 @@ export const Sidebar: React.FC = () => {
         </Button>
       </div>
       <div className="flex-1">
-        <nav className="grid items-start pt-2 px-2 text-sm font-medium lg:px-4">
+        <nav className="grid items-start pt-4 lg:pt-6 px-2 text-sm font-medium lg:px-4 gap-2">
           {sidebarLinks.map((item) => (
             <Link
               key={item.title}
               href={item.href}
               data-active={isActive(item.href)}
-              className="data-[active=true]:bg-muted data-[active=true]:text-primary flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              className="data-[active=true]:bg-muted data-[active=true]:text-primary flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-muted/20 hover:bg-muted/60"
             >
               <item.icon className="h-4 w-4" />
               {item.title}
