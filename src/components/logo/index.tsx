@@ -23,7 +23,7 @@ export const MinimalLogo = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <MapPinned className="size-[80%] text-primary-foreground" />
+      <MapPinned className="size-[70%] text-primary-foreground" />
     </div>
   );
 };
