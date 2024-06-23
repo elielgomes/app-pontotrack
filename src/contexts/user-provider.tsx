@@ -5,7 +5,7 @@ import { User } from "@/services/user/types";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import React, { createContext } from "react";
 import { toast } from "sonner";
-import { userKeys } from "@/query/query-key";
+import { userKeys } from "@/factories/query-keys";
 
 export interface UserContextData {
   isLoading: boolean;

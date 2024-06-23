@@ -5,7 +5,7 @@ import { deleteCookie, setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import React, { createContext } from "react";
 import { toast } from "sonner";
-import { userKeys } from "@/query/query-key";
+import { userKeys } from "@/factories/query-keys";
 
 export interface AuthContextData {
   isPending: boolean;
