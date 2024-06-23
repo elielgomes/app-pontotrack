@@ -6,27 +6,27 @@ interface DashboardBaseProps<T> extends React.HTMLAttributes<T> {
 }
 
 /**
-*  @example
-* 
-* ```tsx
-* <DashboardRootLayout>
-*		<DashboardSidebarWrapper>
-*			<Sidebar />
-*		</DashboardSidebarWrapper>
-*		<DashboardBodyWrapper>
-*			<Header />
-*			<MainWrapper>
-*				<MainContentHeader>
-*					<MainContentTitle>Dashboard</MainContentTitle>
-*				</MainContentHeader>
-*				<MainContentWrapper>
-*					<div>MEU CONTEUDO</div>
-*				</MainContentWrapper>
-*			</MainWrapper>
-*		</DashboardBodyWrapper>
-*	</DashboardRootLayout>
-*	```
-*/
+ *  @example
+ *
+ * ```tsx
+ * <DashboardRootLayout>
+ *		<DashboardSidebarWrapper>
+ *			<Sidebar />
+ *		</DashboardSidebarWrapper>
+ *		<DashboardBodyWrapper>
+ *			<Header />
+ *			<MainWrapper>
+ *				<MainContentHeader>
+ *					<MainContentTitle>Dashboard</MainContentTitle>
+ *				</MainContentHeader>
+ *				<MainContentWrapper>
+ *					<div>MEU CONTEUDO</div>
+ *				</MainContentWrapper>
+ *			</MainWrapper>
+ *		</DashboardBodyWrapper>
+ *	</DashboardRootLayout>
+ *	```
+ */
 export const DashboardRootLayout: React.FC<
   DashboardBaseProps<HTMLDivElement>
 > = ({ children, className, ...props }) => {
