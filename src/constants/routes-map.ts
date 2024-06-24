@@ -5,6 +5,5 @@ export const routesMap = {
   register: "/register",
   forgotPassword: "/forgot-password",
   dashboard: "/app/dashboard",
-  historico: "/app/historico",
   veiculos: "/app/veiculos",
 } as const;

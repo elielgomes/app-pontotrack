@@ -1,4 +1,4 @@
-import { CarFront, History, LayoutDashboard } from "lucide-react";
+import { CarFront, LayoutDashboard } from "lucide-react";
 import { routesMap } from "./routes-map";
 
 export const navLinks = [
@@ -11,10 +11,5 @@ export const navLinks = [
     icon: CarFront,
     title: "Veículos",
     href: routesMap.veiculos,
-  },
-  {
-    icon: History,
-    title: "Histórico",
-    href: routesMap.historico,
   },
 ] as const;
