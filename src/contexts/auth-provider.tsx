@@ -7,6 +7,7 @@ import React, { createContext } from "react";
 import { toast } from "sonner";
 import { userKeys } from "@/factories/query-keys";
 import { AxiosError } from "axios";
+import { routesMap } from "@/constants/routes-map";
 
 export interface AuthContextData {
   isPending: boolean;
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
       queryClient.invalidateQueries({ queryKey: userKeys.me });
       toast.success("Login feito com sucesso!");
-      router.replace("/dashboard");
+      router.replace(routesMap.dashboard);
     },
     onError: (error) => {
       if (error instanceof AxiosError) {
@@ -49,7 +50,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const logout = () => {
     queryClient.clear();
     deleteCookie("app-track");
-    router.replace("/login");
+    router.replace(routesMap.login);
   };
 
   return (

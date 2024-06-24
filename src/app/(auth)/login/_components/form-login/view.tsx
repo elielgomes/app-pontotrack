@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Toggle } from "@/components/ui/toggle";
 import { Button } from "@/components/ui/button";
 import { useFormLogin } from "@/app/(auth)/login/_components/form-login/model";
+import { routesMap } from "@/constants/routes-map";
 
 export const FormLoginView: React.FC<ReturnType<typeof useFormLogin>> = ({
   form,
@@ -36,7 +37,7 @@ export const FormLoginView: React.FC<ReturnType<typeof useFormLogin>> = ({
           <p className="mt-3 text-base text-muted-foreground">
             Não possui conta?{" "}
             <Link
-              href="/register"
+              href={routesMap.register}
               tabIndex={5}
               className="rounded border-none font-semibold text-primary"
             >
@@ -124,7 +125,7 @@ export const FormLoginView: React.FC<ReturnType<typeof useFormLogin>> = ({
                 <div className="flex items-center justify-end">
                   <div className="flex items-center gap-2">
                     <Link
-                      href="/forgot-password"
+                      href={routesMap.forgotPassword}
                       tabIndex={4}
                       className="rounded text-xs font-medium text-primary"
                     >
