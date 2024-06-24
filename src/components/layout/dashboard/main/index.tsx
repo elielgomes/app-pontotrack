@@ -42,7 +42,7 @@ export const MainContentWrapper: React.FC<ContentBaseProps<HTMLDivElement>> = ({
     <div
       {...props}
       className={cn(
-        "flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm",
+        "flex-1 rounded-lg border border-border shadow-sm bg-card px-4 md:px-6 py-6 lg:py-8",
         props.className
       )}
       x-chunk="dashboard-chunk-1"

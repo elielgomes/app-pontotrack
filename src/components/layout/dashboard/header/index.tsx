@@ -1,28 +1,20 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Link from "next/link";
-import { CircleUser, Menu } from "lucide-react";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { FullLogo } from "@/components/logo";
-import { Button } from "@/components/ui/button";
-import { useActivePath } from "@/hooks/use-active-path";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { navLinks } from "@/constants/nav-links";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { ToggleUserMenu } from "@/components/toggle-user-menu";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { navLinks } from "@/constants/nav-links";
+import { useActivePath } from "@/hooks/use-active-path";
 
 export const Header: React.FC = () => {
   const { isActive } = useActivePath();
   return (
-    <header className="h-14 border-b bg-muted/40 lg:h-[60px]">
+    <header className="h-14 border-b bg-card lg:h-[60px] fixed top-0 left-0 right-0 md:ml-[280px] z-50">
       <div className="container flex justify-between md:justify-end h-14 items-center gap-4 border-b lg:h-[60px]">
         <Sheet>
           <SheetTrigger asChild>

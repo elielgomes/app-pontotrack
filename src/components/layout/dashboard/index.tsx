@@ -31,13 +31,7 @@ export const DashboardRootLayout: React.FC<
   DashboardBaseProps<HTMLDivElement>
 > = ({ children, className, ...props }) => {
   return (
-    <div
-      {...props}
-      className={cn(
-        "grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]",
-        className
-      )}
-    >
+    <div {...props} className={cn("min-h-screen w-full", className)}>
       {children}
     </div>
   );
@@ -49,7 +43,10 @@ export const DashboardSidebarWrapper: React.FC<
   return (
     <aside
       {...props}
-      className={cn("hidden border-r bg-muted/40 md:block", className)}
+      className={cn(
+        "hidden border-r bg-card md:block fixed top-0 left-0 bottom-0 w-[280px] z-50",
+        className
+      )}
     >
       {children}
     </aside>
@@ -60,7 +57,10 @@ export const DashboardBodyWrapper: React.FC<
   DashboardBaseProps<HTMLDivElement>
 > = ({ children, className, ...props }) => {
   return (
-    <div {...props} className={cn("flex flex-col", className)}>
+    <div
+      {...props}
+      className={cn("flex flex-col md:ml-[280px] mt-[60px]", className)}
+    >
       {children}
     </div>
   );
