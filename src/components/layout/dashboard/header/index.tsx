@@ -17,12 +17,13 @@ import { useActivePath } from "@/hooks/use-active-path";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { sidebarLinks } from "@/components/layout/dashboard/links";
 import { ToggleTheme } from "@/components/toggle-theme";
+import { ToggleUserMenu } from "@/components/toggle-user-menu";
 
 export const Header: React.FC = () => {
   const { isActive } = useActivePath();
   return (
     <header className="h-14 border-b bg-muted/40 lg:h-[60px]">
-      <div className="container flex justify-between md:justify-end h-14 items-center gap-4 border-b lg:h-[60px] bg-slate-50/20">
+      <div className="container flex justify-between md:justify-end h-14 items-center gap-4 border-b lg:h-[60px]">
         <Sheet>
           <SheetTrigger asChild>
             <Button
@@ -58,22 +59,7 @@ export const Header: React.FC = () => {
         </Sheet>
         <div className="flex gap-4">
           <ToggleTheme />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Configurações</DropdownMenuItem>
-              <DropdownMenuItem>Suporte</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Sair</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <ToggleUserMenu />
         </div>
       </div>
     </header>
