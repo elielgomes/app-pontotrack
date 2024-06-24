@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { createContext } from "react";
 import { toast } from "sonner";
 import { userKeys } from "@/factories/query-keys";
+import { AxiosError } from "axios";
 
 export interface AuthContextData {
   isPending: boolean;
@@ -31,7 +32,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       toast.success("Login feito com sucesso!");
       router.replace("/dashboard");
     },
-    onError: () => {
+    onError: (error) => {
+      if (error instanceof AxiosError) {
+        if (error.response?.status === 401) {
+          return toast.error("E-mail ou senha inválidos!");
+        }
+      }
       toast.error("Erro ao fazer login");
     },
   });
