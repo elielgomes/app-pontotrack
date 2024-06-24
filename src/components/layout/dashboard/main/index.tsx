@@ -25,7 +25,7 @@ export const MainWrapper: React.FC<ContentBaseProps<HTMLDivElement>> = ({
   return (
     <main
       className={cn(
-        "flex flex-1 container flex-col gap-4 lg:gap-6 pt-6 lg:pt-8",
+        "flex flex-1 container flex-col gap-4 lg:gap-6 py-6 lg:py-8",
         className
       )}
     >
@@ -41,10 +41,7 @@ export const MainContentWrapper: React.FC<ContentBaseProps<HTMLDivElement>> = ({
   return (
     <div
       {...props}
-      className={cn(
-        "flex-1 rounded-lg border border-border shadow-sm bg-card px-4 md:px-6 py-6 lg:py-8",
-        props.className
-      )}
+      className={cn("flex-1 flex flex-col gap-6", props.className)}
       x-chunk="dashboard-chunk-1"
     >
       {children}

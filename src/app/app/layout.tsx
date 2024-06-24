@@ -10,7 +10,7 @@ import { UserProvider } from "@/contexts/user-provider";
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <UserProvider>
-      <div className="min-h-screen w-full bg-background">
+      <div className="min-h-screen w-full">
         <DashboardRootLayout>
           <DashboardSidebarWrapper>
             <Sidebar />
