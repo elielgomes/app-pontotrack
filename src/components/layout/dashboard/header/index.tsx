@@ -15,7 +15,7 @@ import { FullLogo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { useActivePath } from "@/hooks/use-active-path";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { sidebarLinks } from "@/components/layout/dashboard/links";
+import { navLinks } from "@/constants/nav-links";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { ToggleUserMenu } from "@/components/toggle-user-menu";
 
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
                 <span className="sr-only">AppTrack</span>
               </span>
               <div className="flex flex-col gap-2">
-                {sidebarLinks.map((item) => (
+                {navLinks.map((item) => (
                   <Link
                     key={item.title}
                     href={item.href}

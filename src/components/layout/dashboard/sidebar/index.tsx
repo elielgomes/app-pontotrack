@@ -7,7 +7,7 @@ import { Bell } from "lucide-react";
 import { MinimalLogo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { useActivePath } from "@/hooks/use-active-path";
-import { sidebarLinks } from "@/components/layout/dashboard/links";
+import { navLinks } from "@/constants/nav-links";
 
 export const Sidebar: React.FC = () => {
   const { isActive } = useActivePath();
@@ -28,7 +28,7 @@ export const Sidebar: React.FC = () => {
       </div>
       <div className="flex-1">
         <nav className="grid items-start pt-4 lg:pt-6 px-2 text-sm font-medium lg:px-4 gap-2">
-          {sidebarLinks.map((item) => (
+          {navLinks.map((item) => (
             <Link
               key={item.title}
               href={item.href}
