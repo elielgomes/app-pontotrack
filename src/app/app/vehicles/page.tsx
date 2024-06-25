@@ -30,7 +30,7 @@ const data: Vehicle[] = [
   },
 ];
 
-const VeiculosPage: NextPage = () => {
+const VehiclesPage: NextPage = () => {
   return (
     <Card>
       <DataTable columns={columns} data={data} />
@@ -38,4 +38,4 @@ const VeiculosPage: NextPage = () => {
   );
 };
 
-export default VeiculosPage;
+export default VehiclesPage;
