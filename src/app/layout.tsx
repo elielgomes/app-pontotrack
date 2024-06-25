@@ -22,6 +22,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
+            storageKey="apptrack-theme"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
