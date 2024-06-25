@@ -71,7 +71,7 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
                       </FormControl>
                       <Label
                         htmlFor="name"
-                        className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform rounded bg-background px-2 text-sm text-foreground duration-300 after:text-red-600 after:content-['_*'] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600  peer-focus:dark:text-blue-500 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
+                        className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform rounded bg-background px-2 text-sm text-foreground duration-300 after:text-red-600 after:content-['_*'] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-primary  peer-focus:dark:text-primary rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
                       >
                         Nome completo{" "}
                       </Label>
@@ -101,7 +101,7 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
                       </FormControl>
                       <Label
                         htmlFor="password"
-                        className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform rounded bg-background px-2 text-sm text-foreground duration-300 after:text-red-600 after:content-['_*'] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600  peer-focus:dark:text-blue-500 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
+                        className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform rounded bg-background px-2 text-sm text-foreground duration-300 after:text-red-600 after:content-['_*'] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-primary  peer-focus:dark:text-primary rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
                       >
                         E-mail{" "}
                       </Label>
@@ -132,7 +132,7 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
                       </FormControl>
                       <Label
                         htmlFor="password"
-                        className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform rounded bg-background px-2 text-sm text-foreground duration-300 after:text-red-600 after:content-['_*'] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600  peer-focus:dark:text-blue-500 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
+                        className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform rounded bg-background px-2 text-sm text-foreground duration-300 after:text-red-600 after:content-['_*'] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-primary  peer-focus:dark:text-primary rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
                       >
                         Senha{" "}
                       </Label>
