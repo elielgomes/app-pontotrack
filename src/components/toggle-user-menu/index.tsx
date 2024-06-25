@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CircleUser } from "lucide-react";
+import Link from "next/link";
 
 import {
   DropdownMenu,
@@ -11,8 +12,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
+import { Button } from "@/components/ui/button";
+import { routesMap } from "@/constants/routes-map";
 
 export const ToggleUserMenu: React.FC = () => {
   const { logout } = useAuth();
@@ -25,9 +27,9 @@ export const ToggleUserMenu: React.FC = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>Configurações</DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link href={routesMap.settings}>Minha Conta</Link>
+        </DropdownMenuItem>
         <DropdownMenuItem>Suporte</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={logout}>Sair</DropdownMenuItem>
