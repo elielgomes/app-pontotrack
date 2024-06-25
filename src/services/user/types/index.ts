@@ -1,3 +1,5 @@
+import { UserRegisterSchema } from "@/schemas/user-register";
+
 export enum Role {
   ADMIN = "ADMIN",
   USER = "USER",
@@ -12,4 +14,9 @@ export interface User {
   role: Role;
   createdAt: Date;
   updatedAt: Date;
+}
+
+export interface RegisterInput extends UserRegisterSchema {}
+export interface RegisterOutput {
+  user: Omit<User, "password">;
 }

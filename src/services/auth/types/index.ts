@@ -7,8 +7,3 @@ export interface LoginOutput {
   access_token: string;
   user: Omit<User, "password">;
 }
-
-export interface RegisterInput extends UserRegisterSchema {}
-export interface RegisterOutput {
-  user: Omit<User, "password">;
-}

@@ -1,16 +1,16 @@
 "use client";
 
-import { type z } from "zod";
-import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { type z } from "zod";
 
-import { auth } from "@/services/auth";
 import { routesMap } from "@/constants/routes-map";
-import { useMutation } from "@tanstack/react-query";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { userRegisterSchema } from "@/schemas/user-register";
+import { user } from "@/services/user";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 
 export const useFormRegister = () => {
   const router = useRouter();
@@ -26,7 +26,7 @@ export const useFormRegister = () => {
   });
 
   const { isPending, mutate } = useMutation({
-    mutationFn: auth.register,
+    mutationFn: user.register,
     onSuccess: () => {
       toast.success("Cadastro realizado com sucesso!");
       router.push(routesMap.dashboard);
