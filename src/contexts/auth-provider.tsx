@@ -1,3 +1,5 @@
+"use client";
+
 import { CredentialsSchema } from "@/schemas/credentials";
 import { auth } from "@/services/auth";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
