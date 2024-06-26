@@ -4,25 +4,30 @@ export const accountFormSchema = z.object({
   name: z
     .string()
     .min(2, {
-      message: "Username must be at least 2 characters.",
+      message: "Nome deve ter no mínimo 2 caracteres.",
     })
-    .max(30, {
-      message: "Username must not be longer than 30 characters.",
+    .max(50, {
+      message: "Nome deve ter no máximo 50 caracteres.",
     }),
-  email: z
-    .string({
-      required_error: "Please select an email to display.",
-    })
-    .email({
-      message: "Please enter a valid email.",
-    }),
+  email: z.string().email({
+    message: "Digite um e-mail válido.",
+  }),
   phone: z
     .string()
-    .min(10, {
-      message: "Phone number must be at least 10 characters.",
-    })
-    .max(10, {
-      message: "Phone number must not be longer than 10 characters.",
-    })
-    .optional(),
+    .optional()
+    .refine(
+      (value) => {
+        if (!value) return true;
+        return value.length >= 14;
+      },
+      {
+        message: "Digite um número de telefone válido.",
+      }
+    )
+    .transform((value) => {
+      if (!value) return value;
+      return value.replace(/\D/g, "");
+    }),
 });
+
+export type AccountFormSchema = z.infer<typeof accountFormSchema>;
