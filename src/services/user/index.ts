@@ -35,4 +35,8 @@ export const user = {
     });
     return true;
   },
+  delete: async () => {
+    await api.delete("/user");
+    return true;
+  },
 };
