@@ -1,20 +1,18 @@
 "use client";
 
+import { userKeys } from "@/factories/query-keys";
 import { user as userService } from "@/services/user";
-import { User } from "@/services/user/types";
+import { UserWithoutPassword } from "@/services/user/types";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import React, { createContext } from "react";
 import { toast } from "sonner";
-import { userKeys } from "@/factories/query-keys";
 
 export interface UserContextData {
   isLoading: boolean;
-  user: Omit<User, "password"> | undefined;
+  user: UserWithoutPassword | null;
 }
 
-export const UserContext = createContext<UserContextData | undefined>(
-  undefined
-);
+export const UserContext = createContext<UserContextData | {}>({});
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const {
@@ -28,7 +26,9 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   });
 
   if (error) {
-    toast.error("Erro ao buscar usuário");
+    toast.error("Erro inesperado", {
+      description: "Ocorreu um erro ao carregar os dados do usuário",
+    });
   }
 
   return (
