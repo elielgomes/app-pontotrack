@@ -1,9 +1,12 @@
+import { AccountFormSchema } from "@/schemas/account-form";
 import { UserRegisterSchema } from "@/schemas/user-register";
 
 export enum Role {
   ADMIN = "ADMIN",
   USER = "USER",
 }
+
+export type UserWithoutPassword = Omit<User, "password">;
 
 export interface User {
   id: string;
@@ -18,5 +21,10 @@ export interface User {
 
 export interface RegisterInput extends UserRegisterSchema {}
 export interface RegisterOutput {
-  user: Omit<User, "password">;
+  user: UserWithoutPassword;
+}
+
+export interface UpdateUserInput extends AccountFormSchema {}
+export interface UpdateUserOutput {
+  user: UserWithoutPassword;
 }
