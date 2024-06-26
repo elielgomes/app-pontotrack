@@ -3,12 +3,15 @@ import type {
   RegisterInput,
   RegisterOutput,
   User,
+  UpdateUserInput,
+  UpdateUserOutput,
+  UserWithoutPassword,
 } from "@/services/user/types/";
 
 export const user = {
   me: async () => {
     try {
-      const response = await api.get<Omit<User, "password">>("/user/me");
+      const response = await api.get<UserWithoutPassword>("/user/me");
       return response.data;
     } catch (error) {
       return undefined;
@@ -38,5 +41,13 @@ export const user = {
   delete: async () => {
     await api.delete("/user");
     return true;
+  },
+  updateUser: async ({ name, email, phone }: UpdateUserInput) => {
+    const updatedUser = await api.patch<UpdateUserOutput>("/user", {
+      name,
+      email,
+      phone,
+    });
+    return updatedUser.data;
   },
 };
