@@ -4,13 +4,17 @@ import type {
   RegisterOutput,
   UpdateUserInput,
   UpdateUserOutput,
-  UserWithoutPassword
+  UserWithoutPassword,
 } from "@/services/user/types/";
 
 export const user = {
   me: async () => {
-    const response = await api.get<UserWithoutPassword>("/user/me");
-    return response.data;
+    try {
+      const response = await api.get<UserWithoutPassword>("/user/me");
+      return response.data;
+    } catch (error) {
+      return null;
+    }
   },
   register: async ({ email, name, password }: RegisterInput) => {
     const response = await api.post<RegisterOutput>("/user", {
