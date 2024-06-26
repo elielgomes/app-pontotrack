@@ -4,7 +4,6 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 
 import { FullLogo } from "@/components/logo";
-import { ToggleTheme } from "@/components/toggle-theme";
 import { ToggleUserMenu } from "@/components/toggle-user-menu";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -49,10 +48,7 @@ export const Header: React.FC = () => {
             </nav>
           </SheetContent>
         </Sheet>
-        <div className="flex gap-4">
-          <ToggleTheme />
-          <ToggleUserMenu />
-        </div>
+        <ToggleUserMenu />
       </div>
     </header>
   );
