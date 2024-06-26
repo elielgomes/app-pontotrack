@@ -1,21 +1,25 @@
 import { NextPage } from "next";
-import { Stats } from "@/app/app/dashboard/_components/stats";
 import { Occurrences } from "@/app/app/dashboard/_components/occurrences";
+import { Stats } from "@/app/app/dashboard/_components/stats";
 import { TopDrivers } from "@/app/app/dashboard/_components/top-drivers";
+import { VehicleStatus } from "@/app/app/dashboard/_components/vehicle-status";
 
 const DashboardPage: NextPage = () => {
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 flex-1">
-        <Stats />
-      </div>
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-full lg:col-span-2">
-          <Occurrences />
+      <div className="grid grid-cols-6 gap-6">
+        <div className="grid gap-6 col-span-full sm:col-span-3 xl:col-span-2">
+          <Stats />
         </div>
-        <div className="col-span-full lg:col-span-1 flex">
+        <div className="col-span-full sm:col-span-3 xl:col-span-2 ">
+          <VehicleStatus />
+        </div>
+        <div className="flex col-span-full xl:col-span-2">
           <TopDrivers />
         </div>
+      </div>
+      <div className="grid grid-cols-1 gap-6">
+        <Occurrences />
       </div>
     </>
   );
