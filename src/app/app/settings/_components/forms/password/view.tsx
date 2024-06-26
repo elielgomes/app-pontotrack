@@ -1,8 +1,6 @@
 "use client";
 
-import {
-	type PasswordFormModel
-} from "@/app/app/settings/_components/forms/password/model";
+import { type PasswordFormModel } from "@/app/app/settings/_components/forms/password/model";
 import { Button } from "@/components/ui/button";
 import {
 	Form,
@@ -42,7 +40,6 @@ export const PasswordFormView: React.FC<PasswordFormModel> = ({
                 <FormControl>
                   <Input
                     tabIndex={1}
-                    autoFocus
                     placeholder="Digite sua senha atual"
                     {...field}
                     type={isVisiblePasswords.password ? "text" : "password"}
