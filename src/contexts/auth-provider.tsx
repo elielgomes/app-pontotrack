@@ -31,9 +31,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setCookie("app-track", access_token, {
         maxAge: 60 * 60 * 24,
       });
-      queryClient.invalidateQueries({ queryKey: userKeys.me });
-      toast.success("Login feito com sucesso!");
       router.replace(routesMap.dashboard);
+      toast.success("Login feito com sucesso!");
+      queryClient.invalidateQueries({ queryKey: userKeys.me });
     },
     onError: (error) => {
       if (error instanceof AxiosError) {
