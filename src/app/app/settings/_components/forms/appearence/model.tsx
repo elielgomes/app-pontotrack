@@ -4,22 +4,22 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import {
-	appearanceFormSchema,
-	type AppearanceFormSchema,
+  appearanceFormSchema,
+  type AppearanceFormSchema,
 } from "@/schemas/appearance-form";
 import { useTheme } from "next-themes";
+import { useEffect } from "react";
 import { toast } from "sonner";
 
 type Theme = "light" | "dark";
 
 export const useAppearanceForm = () => {
-  const defaultTheme = localStorage.getItem("apptrack-theme") as Theme | null;
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
 
   const form = useForm<AppearanceFormSchema>({
     resolver: zodResolver(appearanceFormSchema),
     defaultValues: {
-      theme: defaultTheme || "light",
+      theme: undefined,
     },
   });
 
@@ -27,6 +27,10 @@ export const useAppearanceForm = () => {
     setTheme(data.theme);
     toast.success("Tema salvo com sucesso!");
   };
+
+  useEffect(() => {
+    form.setValue("theme", (theme as Theme) || "light");
+  }, [theme, form]);
 
   return {
     form,

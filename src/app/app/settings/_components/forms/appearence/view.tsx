@@ -3,13 +3,13 @@
 import { type AppearanceFormModel } from "@/app/app/settings/_components/forms/appearence/model";
 import { Button } from "@/components/ui/button";
 import {
-	Form,
-	FormControl,
-	FormDescription,
-	FormField,
-	FormItem,
-	FormLabel,
-	FormMessage,
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Moon, Sun } from "lucide-react";
@@ -32,6 +32,7 @@ export const AppearanceFormView: React.FC<AppearanceFormModel> = ({
               <RadioGroup
                 onValueChange={field.onChange}
                 defaultValue={field.value}
+                value={form.getValues().theme}
                 className="grid max-w-md grid-cols-2 gap-8 pt-2"
               >
                 <FormItem>
