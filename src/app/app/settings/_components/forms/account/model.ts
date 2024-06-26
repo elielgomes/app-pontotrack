@@ -32,7 +32,7 @@ export const useAccountForm = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: userService.updateUser,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [userKeys.me] });
+      queryClient.invalidateQueries({ queryKey: userKeys.me });
       toast.success("Informações atualizadas com sucesso");
       setIsDisabledForm(true);
     },
