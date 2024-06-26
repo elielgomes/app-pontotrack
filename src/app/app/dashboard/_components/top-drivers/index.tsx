@@ -38,10 +38,10 @@ const topDrivers = [
 
 export const TopDrivers: React.FC = () => {
   return (
-    <Card className="overflow-hidden flex-1 flex flex-col">
+    <Card className="overflow-hidden flex-1">
       <CardHeader>
-        <CardTitle className="text-lg">Top motoristas</CardTitle>
-        <CardDescription>Últimos 7 dias</CardDescription>
+        <CardTitle className="text-base">Top motoristas</CardTitle>
+        <CardDescription>Última semana</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">

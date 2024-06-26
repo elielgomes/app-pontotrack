@@ -24,22 +24,6 @@ const stats = [
     stat: "9",
     icon: OctagonAlert,
     change: "5.4%",
-    changeType: "decrease",
-  },
-  {
-    id: 3,
-    name: "Multas",
-    stat: "2",
-    icon: FileWarning,
-    change: "7%",
-    changeType: "decrease",
-  },
-  {
-    id: 4,
-    name: "Alertas",
-    stat: "7",
-    icon: Siren,
-    change: "16.3%",
     changeType: "increase",
   },
 ];
@@ -49,12 +33,14 @@ export const Stats: React.FC = () => {
     <>
       {stats.map((item) => (
         <Card key={item.id}>
-          <CardHeader className="flex flex-row justify-between">
-            <CardTitle className="text-sm">{item.name}</CardTitle>
-            <item.icon className="size-4" />
+          <CardHeader>
+            <CardTitle className="text-base">{item.name}</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-row justify-between">
-            <p className="font-bold text-2xl">{item.stat}</p>
+            <div className="flex items-center gap-6">
+              <item.icon className="size-10" />
+              <p className="font-bold text-5xl">{item.stat}</p>
+            </div>
             <p
               data-change-type={item.changeType}
               className="ml-2 flex items-baseline text-sm font-semibold data-[change-type=decrease]:text-red-500 data-[change-type=increase]:text-green-500"

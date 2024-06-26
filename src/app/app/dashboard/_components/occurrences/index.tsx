@@ -1,23 +1,24 @@
 import React from "react";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { BarChartOccurrences } from "@/app/app/dashboard/_components/bar-chart-occurrences";
+import { BarChartAlerts } from "@/app/app/dashboard/_components/charts/bar-chart-alerts";
 
 export const Occurrences: React.FC = () => {
   return (
     <>
-      <Card>
+      <Card className="col-span-full">
         <CardHeader>
-          <CardTitle className="text-lg">Ocorrências</CardTitle>
-          <CardDescription>Últimos 12 meses</CardDescription>
+          <CardTitle className="text-base">Alertas e Eventos</CardTitle>
+          <CardDescription>Última semana</CardDescription>
         </CardHeader>
-        <div className="p-6 pt-0 pl-2">
-          <BarChartOccurrences />
-        </div>
+        <CardContent className="h-80 flex">
+          <BarChartAlerts />
+        </CardContent>
       </Card>
     </>
   );
