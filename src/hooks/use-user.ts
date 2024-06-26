@@ -7,7 +7,6 @@ export const useUser = (): UserContextData => {
   const context = useContext(UserContext);
 
   if (!context) {
-    console.error("Error: useUser must be used within an UserProvider");
     return {
       isLoading: false,
       user: undefined,

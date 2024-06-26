@@ -2,20 +2,15 @@ import { api } from "@/lib/axios/api";
 import type {
   RegisterInput,
   RegisterOutput,
-  User,
   UpdateUserInput,
   UpdateUserOutput,
-  UserWithoutPassword,
+  UserWithoutPassword
 } from "@/services/user/types/";
 
 export const user = {
   me: async () => {
-    try {
-      const response = await api.get<UserWithoutPassword>("/user/me");
-      return response.data;
-    } catch (error) {
-      return undefined;
-    }
+    const response = await api.get<UserWithoutPassword>("/user/me");
+    return response.data;
   },
   register: async ({ email, name, password }: RegisterInput) => {
     const response = await api.post<RegisterOutput>("/user", {
@@ -36,11 +31,9 @@ export const user = {
       password: password,
       newPassword: newPassword,
     });
-    return true;
   },
   delete: async () => {
     await api.delete("/user");
-    return true;
   },
   updateUser: async ({ name, email, phone }: UpdateUserInput) => {
     const updatedUser = await api.patch<UpdateUserOutput>("/user", {
