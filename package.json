@@ -2,6 +2,10 @@
   "name": "app-track",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Eliel Gomes",
+    "email": "elielgomespg@hotmail.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -25,6 +29,7 @@
     "@tanstack/react-query": "^5.45.1",
     "@tanstack/react-table": "^8.17.3",
     "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cookies-next": "^4.2.1",
@@ -32,10 +37,10 @@
     "next": "14.2.4",
     "next-themes": "^0.3.0",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",
     "react-imask": "^7.6.1",
-    "recharts": "^2.12.7",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
@@ -43,6 +48,7 @@
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.43.1",
+    "@types/chart.js": "^2.9.41",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
