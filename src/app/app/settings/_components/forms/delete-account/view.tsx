@@ -1,17 +1,14 @@
 "use client";
 
-import {
-  useDeleteAccountForm,
-  type DeleteAccountFormModel,
-} from "@/app/app/settings/_components/forms/delete-account/model";
+import { type DeleteAccountFormModel } from "@/app/app/settings/_components/forms/delete-account/model";
 import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { LoaderCircle, UserRoundX } from "lucide-react";
@@ -23,7 +20,11 @@ export const DeleteAccountFormView: React.FC<DeleteAccountFormModel> = ({
 }) => {
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8"
+        autoComplete="off"
+      >
         <FormField
           control={form.control}
           name="confirm"
