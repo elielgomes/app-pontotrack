@@ -5,3 +5,5 @@ export const appearanceFormSchema = z.object({
     required_error: "Selecione um tema",
   }),
 });
+
+export type AppearanceFormSchema = z.infer<typeof appearanceFormSchema>;

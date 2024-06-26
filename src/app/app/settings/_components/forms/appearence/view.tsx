@@ -1,22 +1,23 @@
 "use client";
 
-import { useAppearanceForm } from "@/app/app/settings/_components/forms/appearence/model";
+import { type AppearanceFormModel } from "@/app/app/settings/_components/forms/appearence/model";
 import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Moon, Sun } from "lucide-react";
 
-export const AppearanceFormView: React.FC<
-  ReturnType<typeof useAppearanceForm>
-> = ({ form, onSubmit }) => {
+export const AppearanceFormView: React.FC<AppearanceFormModel> = ({
+  form,
+  onSubmit,
+}) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

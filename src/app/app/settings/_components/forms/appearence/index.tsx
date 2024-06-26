@@ -5,5 +5,6 @@ import { AppearanceFormView } from "@/app/app/settings/_components/forms/appeare
 
 export const AppearanceForm: React.FC = () => {
   const model = useAppearanceForm();
+
   return <AppearanceFormView {...model} />;
 };

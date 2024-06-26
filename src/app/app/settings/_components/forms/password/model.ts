@@ -3,15 +3,15 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-import { passwordFormSchema } from "@/schemas/password-form";
+import {
+  passwordFormSchema,
+  type PasswordFormSchema,
+} from "@/schemas/password-form";
 import { user } from "@/services/user";
 import { AxiosError } from "axios";
 import { useState } from "react";
 import { toast } from "sonner";
-
-type AccountFormValues = z.infer<typeof passwordFormSchema>;
 
 export const usePasswordForm = () => {
   const [isVisiblePasswords, setIsVisiblePasswords] = useState({
@@ -20,7 +20,7 @@ export const usePasswordForm = () => {
     confirmNewPassword: false,
   });
 
-  const form = useForm<AccountFormValues>({
+  const form = useForm<PasswordFormSchema>({
     resolver: zodResolver(passwordFormSchema),
     defaultValues: {
       password: "",
@@ -42,7 +42,7 @@ export const usePasswordForm = () => {
     },
   });
 
-  const onSubmit = (data: AccountFormValues) => {
+  const onSubmit = (data: PasswordFormSchema) => {
     mutate({
       password: data.password,
       newPassword: data.newPassword,
@@ -56,3 +56,5 @@ export const usePasswordForm = () => {
     setIsVisiblePasswords,
   };
 };
+
+export type PasswordFormModel = ReturnType<typeof usePasswordForm>;

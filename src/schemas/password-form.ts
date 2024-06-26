@@ -41,3 +41,5 @@ export const passwordFormSchema = z
     message: "As nova senha e a confirmação não coincidem.",
     path: ["confirmNewPassword"],
   });
+
+export type PasswordFormSchema = z.infer<typeof passwordFormSchema>;

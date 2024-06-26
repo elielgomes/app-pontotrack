@@ -1,20 +1,22 @@
 "use client";
 
-import { usePasswordForm } from "@/app/app/settings/_components/forms/password/model";
+import {
+	type PasswordFormModel
+} from "@/app/app/settings/_components/forms/password/model";
 import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Toggle } from "@/components/ui/toggle";
 import { Eye, EyeOff, KeyRound, LoaderCircle } from "lucide-react";
 
-export const PasswordFormView: React.FC<ReturnType<typeof usePasswordForm>> = ({
+export const PasswordFormView: React.FC<PasswordFormModel> = ({
   form,
   isPending,
   isVisiblePasswords,

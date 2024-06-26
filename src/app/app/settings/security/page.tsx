@@ -1,13 +1,12 @@
-import React from "react";
 import { NextPage } from "next";
 
-import { PasswordForm } from "@/app/app/settings/_components/forms/password";
+import { PasswordForm } from "@/app/app/settings/_components/forms/password/";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
