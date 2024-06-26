@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Toggle } from "@/components/ui/toggle";
+import { cn } from "@/lib/tw-merge";
 import { LoaderCircle, Pencil, PencilOff, UserCheck } from "lucide-react";
 
 export const AccountFormView: React.FC<AccountFormModel> = ({
@@ -41,7 +42,12 @@ export const AccountFormView: React.FC<AccountFormModel> = ({
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="after:text-red-600 after:content-['_*']">
+              <FormLabel
+                className={cn(
+                  "after:text-red-600 after:content-['_*']",
+                  field.disabled && "after:hidden"
+                )}
+              >
                 Nome
               </FormLabel>
               <FormControl>
@@ -56,7 +62,12 @@ export const AccountFormView: React.FC<AccountFormModel> = ({
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="after:text-red-600 after:content-['_*']">
+              <FormLabel
+                className={cn(
+                  "after:text-red-600 after:content-['_*']",
+                  field.disabled && "after:hidden"
+                )}
+              >
                 E-mail
               </FormLabel>
               <FormControl>
