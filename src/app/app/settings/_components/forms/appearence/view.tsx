@@ -3,16 +3,15 @@
 import { type AppearanceFormModel } from "@/app/app/settings/_components/forms/appearence/model";
 import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Moon, Sun } from "lucide-react";
 
 export const AppearanceFormView: React.FC<AppearanceFormModel> = ({
   form,
@@ -96,12 +95,7 @@ export const AppearanceFormView: React.FC<AppearanceFormModel> = ({
           type="submit"
           className="flex items-center justify-center gap-2 px-4 text-sm font-bold text-primary-foreground shadow-sm focus:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          <span>Salvar preferência</span>
-          {form.getValues().theme === "dark" ? (
-            <Moon className="size-4" />
-          ) : (
-            <Sun className="size-4" />
-          )}
+          Salvar preferência
         </Button>
       </form>
     </Form>

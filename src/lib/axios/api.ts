@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getCookie } from "cookies-next";
-import { env } from "@/config/env";
+import { env } from "@/configs/env";
 
 const api = axios.create({
   baseURL: env.NEXT_PUBLIC_API_URL,

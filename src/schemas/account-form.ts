@@ -3,8 +3,8 @@ import { z } from "zod";
 export const accountFormSchema = z.object({
   name: z
     .string()
-    .min(2, {
-      message: "Nome deve ter no mínimo 2 caracteres.",
+    .min(3, {
+      message: "Nome deve ter no mínimo 3 caracteres.",
     })
     .max(50, {
       message: "Nome deve ter no máximo 50 caracteres.",
