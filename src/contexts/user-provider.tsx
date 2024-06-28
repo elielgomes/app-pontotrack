@@ -12,7 +12,9 @@ export interface UserContextData {
   user: UserWithoutPassword | null;
 }
 
-export const UserContext = createContext<UserContextData | {}>({});
+export const UserContext = createContext<UserContextData>(
+  {} as UserContextData
+);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const {

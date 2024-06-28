@@ -9,7 +9,7 @@ export const useUser = (): UserContextData => {
   if (!context) {
     return {
       isLoading: false,
-      user: undefined,
+      user: null,
     };
   }
   return context;
