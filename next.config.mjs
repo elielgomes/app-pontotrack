@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["avatar.iran.liara.run", "images.unsplash.com", "tailwindui.com"],
+    remotePatterns: [
+      {
+        hostname: "avatar.iran.liara.run",
+      },
+      {
+        hostname: "images.unsplash.com",
+      },
+
+      {
+        hostname: "tailwindui.com",
+      },
+    ],
   },
 };
 
