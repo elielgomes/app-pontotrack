@@ -67,11 +67,11 @@ export const TestimonialsSection: React.FC = () => {
               <SwiperSlide key={testimonial.name}>
                 <div className="relative">
                   <blockquote className="mt-10">
-                    <div className="max-w-3xl mx-auto text-center text-xl leading-9 font-medium text-foreground">
+                    <div className="max-w-3xl mx-auto text-center text-lg sm:text-xl leading-9 font-medium text-foreground">
                       <p>&ldquo;{testimonial.text}&rdquo;</p>
                     </div>
                     <footer className="mt-8">
-                      <div className="md:flex md:items-center md:justify-center gap-4">
+                      <div className="flex items-center justify-center gap-4">
                         <Avatar>
                           <AvatarFallback className="text-foreground">
                             {testimonial.name.slice(0, 2).toLocaleUpperCase()}
