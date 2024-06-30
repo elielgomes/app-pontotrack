@@ -37,10 +37,6 @@ const links = [
     title: "FAQ",
     sectionId: "faq",
   },
-  {
-    title: "Contato",
-    sectionId: "contact",
-  },
 ];
 
 export const Navbar: React.FC = () => {
@@ -102,7 +98,7 @@ export const Navbar: React.FC = () => {
                   </div>
                 </SheetHeader>
                 <div className="pt-8 w-full">
-                  <ul className="font-semibold text-sm text-white flex flex-col gap-2 w-full">
+                  <ul className="font-semibold text-sm text-foreground flex flex-col gap-2 w-full">
                     {links.map((link) => (
                       <SheetClose asChild key={link.title}>
                         <li
