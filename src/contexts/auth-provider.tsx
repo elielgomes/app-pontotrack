@@ -31,7 +31,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setCookie("app-track", access_token, {
         maxAge: 60 * 60 * 24,
       });
-      queryClient.invalidateQueries({ queryKey: userKeys.me });
       toast.success("Login feito com sucesso!");
       router.replace(routesMap.dashboard);
     },
@@ -42,6 +41,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
       }
       toast.error("Erro ao fazer login");
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: userKeys.me });
+      router.refresh();
     },
   });
 
