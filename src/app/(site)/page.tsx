@@ -1,3 +1,5 @@
+"use client";
+
 import { BenefitsSection } from "@/app/(site)/_components/benefits-section";
 import { CasesSections } from "@/app/(site)/_components/cases-seciton";
 import { CTASection } from "@/app/(site)/_components/cta-section";
@@ -8,8 +10,17 @@ import { StatsSection } from "@/app/(site)/_components/stats-section";
 import { TestimonialsSection } from "@/app/(site)/_components/testimonials-section";
 import { Separator } from "@/components/ui/separator";
 import { NextPage } from "next";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Site: NextPage = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      duration: 1000,
+    });
+  }, []);
   return (
     <div className="overflow-x-hidden">
       <HeroSection />
