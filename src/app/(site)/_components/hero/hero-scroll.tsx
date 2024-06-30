@@ -26,7 +26,7 @@ export const HeroScroll: React.FC = () => {
             </div>
             <div className="flex flex-col items-center space-y-2 mt-10">
               <Button asChild className="rounded-full font-semibold">
-                <Link href={routesMap.login}>
+                <Link href={routesMap.register}>
                   Experimente agora
                   <ArrowRightIcon className="w-4 h-4 ml-4" />
                 </Link>
@@ -36,7 +36,7 @@ export const HeroScroll: React.FC = () => {
         }
       >
         <Image
-          src="/mock-dashboard-dark.png"
+          src="/mock-dashboard-dark.webp"
           alt="hero"
           height={720}
           width={1400}
@@ -44,7 +44,7 @@ export const HeroScroll: React.FC = () => {
           draggable={false}
         />
         <Image
-          src="/mock-dashboard-light.png"
+          src="/mock-dashboard-light.webp"
           alt="hero"
           height={720}
           width={1400}
