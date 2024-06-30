@@ -29,7 +29,12 @@ export const ServicesSection: React.FC = () => {
   return (
     <section id="services" className="py-16">
       <div className="container max-w-screen-xl">
-        <div className="mb-12 flex flex-col justify-center items-center md:items-start">
+        <div
+          className="mb-12 flex flex-col justify-center items-center md:items-start"
+          data-aos="fade-right"
+          data-aos-delay="200"
+          data-aos-duration="1000"
+        >
           <Badge variant="outline" className="mb-4">
             Nossos serviços
           </Badge>
@@ -49,8 +54,13 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
-            <Card key={service.title} className="px-6 py-8">
+          {services.map((service, index) => (
+            <Card
+              key={service.title}
+              className="px-6 py-8"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <service.icon className="w-8 h-8 text-primary mb-4" />
               <h4 className="mb-2 font-bold">{service.title}</h4>
               <p className="text-muted-foreground mb-4">

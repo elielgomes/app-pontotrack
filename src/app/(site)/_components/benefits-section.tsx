@@ -52,7 +52,9 @@ const benefits = [
 export const BenefitsSection: React.FC = () => {
   return (
     <>
-      <section id="benefits" className="py-16">
+      <section id="benefits" className="py-16 relative bg-secondary/30">
+        <span className="pointer-events-none z-10 absolute size-26 md:size-64 top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-bl from-primary to-transparent blur-[100px] md:blur-[150px]"></span>
+        <span className="pointer-events-none z-10 absolute size-32 md:size-64 top-full left-full -translate-x-1/2 translate-y-1/2 rounded-full bg-gradient-to-bl from-primary to-transparent blur-[100px] md:blur-[150px]"></span>
         <div className="container max-w-screen-xl">
           <header className="mb-12 flex flex-col items-center justify-center">
             <Badge variant="outline" className="mb-4">
@@ -72,8 +74,13 @@ export const BenefitsSection: React.FC = () => {
           </header>
 
           <main className="grid md:grid-cols-3 gap-6">
-            {benefits.map((benefit) => (
-              <Card key={benefit.title} className="px-6 py-8">
+            {benefits.map((benefit, index) => (
+              <Card
+                key={benefit.title}
+                className="px-6 py-8"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 <benefit.icon className="w-8 h-8 text-primary mb-4" />
 
                 <h4 className="mb-2 font-bold">{benefit.title}</h4>

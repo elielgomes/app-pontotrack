@@ -25,9 +25,9 @@ const stats = [
 
 export const StatsSection: React.FC = () => {
   return (
-    <div className="py-16">
+    <div className="py-16 bg-secondary/30">
       <div className="container max-w-7xl">
-        <header className="mb-12 flex flex-col items-center">
+        <div className="mb-12 flex flex-col items-center">
           <Badge variant="outline" className="mb-4">
             Nossos números
           </Badge>
@@ -37,12 +37,16 @@ export const StatsSection: React.FC = () => {
           <h3 className="text-center text-lg mb-4 text-foreground font-medium">
             Líder em segurança e eficiência no rastreio de veículos
           </h3>
-        </header>
+        </div>
         <div className="grid md:grid-cols-3 gap-6">
-          {stats.map((stat) => (
-            <Card key={stat.title} className="px-6 py-8">
-              <p className="text-5xl font-extrabold text-foreground">
-                <b className="text-primary">+ </b>
+          {stats.map((stat, index) => (
+            <Card
+              key={stat.title}
+              className="px-6 py-8 z-20"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <p className="text-5xl font-extrabold text-foreground before:content-['+'] before:text-primary">
                 {stat.value}
               </p>
               <h3 className="text-lg mt-2 leading-6 font-medium text-foreground">

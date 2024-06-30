@@ -73,6 +73,8 @@ export function FAQSection() {
               key={item.title}
               value={`item-${index}`}
               className="border border-border rounded-md bg-background"
+              data-aos="fade-left"
+              data-aos-delay={index * 50}
             >
               <AccordionTrigger className="text-left px-6">
                 {item.title}
