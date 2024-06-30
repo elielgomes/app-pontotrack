@@ -21,7 +21,7 @@ const testimonials = [
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     company: "CEO, Tuple",
-    text: "Com o controle de velocidade, conseguimos reduzir o consumo médio dos veículos e minimizar os gastos com multas de trânsito. A Ponto Track nos trouxe maior segurança, eficiência e otimização dos processos operacionais.",
+    text: "Com o controle de velocidade, conseguimos reduzir o consumo médio dos veículos e minimizar os gastos com multas de trânsito. A AppTrack nos trouxe maior segurança, eficiência e otimização dos processos operacionais.",
   },
   {
     name: "Roberto Silva",
@@ -55,7 +55,7 @@ export const TestimonialsSection: React.FC = () => {
             speed={1000}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: true,
+              disableOnInteraction: false,
             }}
             pagination={{
               clickable: true,
