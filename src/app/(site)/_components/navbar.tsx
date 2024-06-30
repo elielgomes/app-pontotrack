@@ -1,6 +1,6 @@
 "use client";
 
-import { FullLogo } from "@/components/logo";
+import { FullLogo, MinimalLogo } from "@/components/logo";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { Button } from "@/components/ui/button";
 import {
@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
       <div className="container max-w-screen-xl h-full flex justify-between items-center">
         <FullLogo />
         <nav className="flex items-center h-full">
-          <ul className="font-semibold text-sm text-foreground gap-6 hidden md:flex">
+          <ul className="font-semibold text-sm text-foreground gap-6 hidden lg:flex">
             {links.map((link) => (
               <li
                 key={link.sectionId}
@@ -78,14 +78,17 @@ export const Navbar: React.FC = () => {
           <div className="flex gap-4">
             <ToggleTheme />
             <Button
+              asChild
               variant="outline"
-              className="hidden md:flex px-6 gap-2 items-center justify-between"
+              className="hidden lg:flex px-6 gap-2 items-center justify-between"
             >
-              <Link href={routesMap.login}>Login</Link>
-              <ArrowRightIcon className="size-4" />
+              <Link href={routesMap.login}>
+                Login
+                <ArrowRightIcon className="size-4" />
+              </Link>
             </Button>
           </div>
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline">
@@ -95,16 +98,16 @@ export const Navbar: React.FC = () => {
               <SheetContent className="z-[9999]">
                 <SheetHeader>
                   <div className="flex justify-start">
-                    <FullLogo />
+                    <MinimalLogo />
                   </div>
                 </SheetHeader>
                 <div className="pt-8 w-full">
-                  <ul className="font-semibold text-sm text-white flex flex-col gap-2 w-full ">
+                  <ul className="font-semibold text-sm text-white flex flex-col gap-2 w-full">
                     {links.map((link) => (
                       <SheetClose asChild key={link.title}>
                         <li
                           onClick={() => scrollTo(link.sectionId)}
-                          className="w-full flex hover:text-primary py-2 px-4 transition-colors rounded-md hover:bg-muted/40"
+                          className="cursor-pointer w-full flex hover:text-primary py-2 px-4 transition-colors rounded-md hover:bg-muted/40"
                         >
                           {link.title}
                         </li>
@@ -114,11 +117,14 @@ export const Navbar: React.FC = () => {
                 </div>
                 <SheetFooter className="mt-12">
                   <Button
+                    asChild
                     variant="outline"
-                    className="px-6 gap-2 items-center justify-center"
+                    className="px-6 gap-2 items-center justify-center w-full"
                   >
-                    <Link href={routesMap.login}>Login</Link>
-                    <ArrowRightIcon className="size-4" />
+                    <Link href={routesMap.login}>
+                      Login
+                      <ArrowRightIcon className="size-4" />
+                    </Link>
                   </Button>
                 </SheetFooter>
               </SheetContent>
