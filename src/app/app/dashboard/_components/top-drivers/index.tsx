@@ -1,12 +1,13 @@
-import React from "react";
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
 } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
+import { Avatar } from "@radix-ui/react-avatar";
+import { CircleUser } from "lucide-react";
+import React from "react";
 
 const topDrivers = [
   {
@@ -48,11 +49,8 @@ export const TopDrivers: React.FC = () => {
           {topDrivers.map((driver, i) => (
             <div key={driver.id} className="flex items-center gap-4">
               <div className="font-medium">{i + 1}º</div>
-              <Avatar className="h-9 w-9 flex">
-                <AvatarImage src={driver.avatar} />
-                <AvatarFallback className="uppercase">
-                  {driver.name.slice(0, 2)}
-                </AvatarFallback>
+              <Avatar className="h-9 w-9 flex items-center justify-center bg-secondary rounded-full">
+                <CircleUser className="h-5 w-5" />
               </Avatar>
               <div className="grid gap-1">
                 <p className="text-sm font-medium leading-none truncate">

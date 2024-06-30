@@ -1,20 +1,19 @@
 "use client";
 
-import React from "react";
 import { CircleUser } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAuth } from "@/hooks/use-auth";
-import { Button } from "@/components/ui/button";
 import { routesMap } from "@/constants/routes-map";
+import { useAuth } from "@/hooks/use-auth";
 
 export const ToggleUserMenu: React.FC = () => {
   const { logout } = useAuth();
@@ -27,12 +26,13 @@ export const ToggleUserMenu: React.FC = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem>
+        <DropdownMenuItem asChild className="cursor-pointer">
           <Link href={routesMap.settings}>Minha Conta</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>Suporte</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={logout}>Sair</DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer" onClick={() => logout()}>
+          Sair
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

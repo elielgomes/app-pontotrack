@@ -3,9 +3,6 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "avatar.iran.liara.run",
-      },
-      {
         hostname: "images.unsplash.com",
       },
 
