@@ -11,6 +11,7 @@ import { userRegisterSchema } from "@/schemas/user-register";
 import { user } from "@/services/user";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 
 export const useFormRegister = () => {
   const router = useRouter();
@@ -31,8 +32,16 @@ export const useFormRegister = () => {
       toast.success("Cadastro realizado com sucesso!");
       router.push(routesMap.dashboard);
     },
-    onError: () => {
-      toast.error("Erro ao fazer login");
+    onError: (error) => {
+      if (error instanceof AxiosError && error.response?.status === 409) {
+        toast.error("Email já cadastrado");
+        return;
+      }
+      if (error instanceof AxiosError && error.response?.status === 400) {
+        toast.error("Verifique os campos e tente novamente");
+        return;
+      }
+      toast.error("Erro ao criar conta");
     },
   });
 
@@ -43,7 +52,6 @@ export const useFormRegister = () => {
       password: values.password,
     });
   };
-
   return {
     form,
     isVisiblePassword,
