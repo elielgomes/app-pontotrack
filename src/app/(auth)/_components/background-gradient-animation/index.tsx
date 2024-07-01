@@ -3,8 +3,8 @@ import { cn } from "@/lib/tw-merge";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "rgb(22, 86, 204)",
-  gradientBackgroundEnd = "rgb(68, 102, 204)",
+  gradientBackgroundStart = "rgb(2, 8, 23)",
+  gradientBackgroundEnd = "hsl(var(--primary))",
   firstColor = "68, 102, 204",
   secondColor = "39, 179, 179",
   thirdColor = "22, 86, 204",

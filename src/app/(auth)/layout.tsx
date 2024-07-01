@@ -25,7 +25,7 @@ export default function AuthLayout({
           </Link>
         </Button>
         <BackgroundGradientAnimation
-          containerClassName="absolute lg:w-3/5 lg:relative"
+          containerClassName="absolute lg:w-2/4 lg:relative"
           className="absolute inset-0"
         >
           <Image
@@ -34,10 +34,10 @@ export default function AuthLayout({
             width={1080}
             height={720}
             priority
-            className="object-cover grayscale w-auto h-full opacity-25 object-center"
+            className="object-cover grayscale w-full h-full opacity-10 object-center"
           />
         </BackgroundGradientAnimation>
-        <div className="absolute h-dvh w-full bg-transparent lg:w-2/5 lg:bg-background lg:static">
+        <div className="absolute h-dvh w-full bg-transparent lg:w-2/4 lg:bg-background lg:static">
           <div className="flex h-full w-full items-center justify-center px-4 py-8 lg:bg-none">
             {children}
           </div>
