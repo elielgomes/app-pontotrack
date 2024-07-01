@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { passwordBaseRegexSchema } from "@/schemas/password-form";
 
 export const userRegisterSchema = z.object({
   name: z
@@ -17,14 +18,16 @@ export const userRegisterSchema = z.object({
     .max(100, {
       message: "O e-mail deve ter no máximo 100 caracteres",
     }),
-  password: z
-    .string()
-    .min(6, {
-      message: "A senha deve ter no mínimo 6 caracteres",
-    })
-    .max(20, {
-      message: "A senha deve ter no máximo 20 caracteres",
-    }),
+  password: passwordBaseRegexSchema(
+    z
+      .string()
+      .min(8, {
+        message: "A senha deve ter no mínimo 8 caracteres.",
+      })
+      .max(20, {
+        message: "A senha deve ter no máximo 20 caracteres.",
+      })
+  ),
 });
 
 export type UserRegisterSchema = z.infer<typeof userRegisterSchema>;

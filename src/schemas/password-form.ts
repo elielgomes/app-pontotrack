@@ -1,9 +1,12 @@
 import { z } from "zod";
 
-const passwordBaseRegexSchema = (schema: z.ZodString) => {
+export const passwordBaseRegexSchema = (schema: z.ZodString) => {
   return schema
     .regex(/(?=.*[A-Z])/, {
       message: "Deve ter pelo menos 1 letra maiúscula",
+    })
+    .regex(/(?=.*[a-z])/, {
+      message: "Deve ter pelo menos 1 letra minúscula",
     })
     .regex(/(?=.*\W+)/, {
       message: "Deve ter pelo menos 1 caracter especial",
