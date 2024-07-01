@@ -75,6 +75,15 @@ O **AppTrack** é uma aplicação web que oferece funcionalidades de CRUD (Creat
 - Alteração de senha.
 - Seleção de tema para a aplicação.
 
+## 🌐 Uso de Dados Estáticos
+
+### 📊 Páginas de Dashboard e Veículos
+Para melhorar a experiência do usuário e facilitar a visualização do layout, as páginas de dashboard e veículos utilizam dados estáticos mockados. Esses dados são utilizados apenas para fins de demonstração e não refletem informações reais de rastreamento de veículos.
+
+- Dashboard: Exibe informações resumidas e estatísticas mockadas sobre o sistema de rastreamento.
+- Veículos: Mostra uma lista de veículos com detalhes fictícios, permitindo ao usuário visualizar como as informações reais seriam apresentadas.
+Esses dados estáticos ajudam a criar uma experiência mais fluida e visualmente agradável, além de permitir a verificação do design e funcionalidade sem a necessidade de integração com dados reais.
+
 ## 🔗 Acesso ao Projeto
 
 Você pode acessar o projeto clicando [aqui](https://apptrack-coral.vercel.app/) ou pelo link: https://apptrack-coral.vercel.app/
