@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { Eye, EyeOff, LoaderCircle, LogIn } from "lucide-react";
-
+import { useFormRegister } from "@/app/(auth)/register/_components/form-register/model";
+import { FullLogo } from "@/components/logo";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -10,13 +10,24 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { FullLogo } from "@/components/logo";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
 import { routesMap } from "@/constants/routes-map";
-import { useFormRegister } from "@/app/(auth)/register/_components/form-register/model";
+import { Eye, EyeOff, LoaderCircle, LogIn } from "lucide-react";
+import Link from "next/link";
+
+const requirementsPassword = [
+  { regex: /^.{8,20}$/, message: "8 - 20 caracteres" },
+  { regex: /[A-Z]/, message: "Uma letra maiúscula" },
+  { regex: /[a-z]/, message: "Uma letra minúscula" },
+  { regex: /\d/, message: "Um número" },
+  { regex: /[\W_]/, message: "Um caractere especial" },
+];
+
+const validPassword = (value: string, field: number): boolean => {
+  return new RegExp(requirementsPassword[field].regex).test(value);
+};
 
 export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
   form,
@@ -49,12 +60,12 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
 
         <div className="mt-6">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
-                  <FormItem className="space-y-1">
+                  <FormItem className="space-y-2">
                     <div className="relative">
                       <FormControl>
                         <Input
@@ -85,7 +96,7 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem className="space-y-1">
+                  <FormItem className="space-y-2">
                     <div className="relative">
                       <FormControl>
                         <Input
@@ -115,7 +126,7 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
                 control={form.control}
                 name="password"
                 render={({ field }) => (
-                  <FormItem className="space-y-1">
+                  <FormItem className="space-y-2 relative">
                     <div className="relative">
                       <FormControl>
                         <Input
@@ -148,7 +159,27 @@ export const FormRegisterView: React.FC<ReturnType<typeof useFormRegister>> = ({
                         )}
                       </Toggle>
                     </div>
-                    <FormMessage className="absolute text-xs text-red-700" />
+                    <div className="text-xs text-muted-foreground space-x-1 space-y-1">
+                      <p>Deve ter pelo menos:</p>
+                      <ul className="list-disc pl-4">
+                        {requirementsPassword.map((item, index) => {
+                          const isValid = validPassword(field.value, index);
+                          const hasError = form.formState.errors.password;
+
+                          return (
+                            <li
+                              key={item.message}
+                              data-ok={isValid}
+                              className={`text-muted-foreground data-[ok=true]:text-primary ${
+                                hasError && !isValid && "text-red-600"
+                              }`}
+                            >
+                              {item.message}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </FormItem>
                 )}
               />
