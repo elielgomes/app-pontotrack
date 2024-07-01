@@ -51,7 +51,7 @@ Para que o **AppTrack** funcione corretamente, é necessário clonar e configura
 1. **Clone o Repositório da API:**
 
 ```bash
-git clone https://github.com/elielgomes/api-apptrack.git
+git clone https://github.com/elielgomes/api-pontotrack.git
 cd api-pontotrack
 ```
 
