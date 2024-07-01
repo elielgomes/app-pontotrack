@@ -23,7 +23,7 @@ export default function RootLayout({
           <ThemeProvider
             attribute="class"
             storageKey="apptrack-theme"
-            defaultTheme="light"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
