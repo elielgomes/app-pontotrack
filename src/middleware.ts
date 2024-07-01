@@ -15,7 +15,6 @@ const redirectToDashboard = (req: NextRequest) => {
 export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const token = req.cookies.get("app-track");
-  console.log("token", token);
   if (!token && path.startsWith(routesMap.app)) {
     return redirectToLogin(req);
   }
@@ -23,7 +22,6 @@ export default async function middleware(req: NextRequest) {
   if (token) {
     try {
       const isValidUser = await user.me();
-      console.log("isValidUser", isValidUser);
       if (isValidUser && path.startsWith(routesMap.login)) {
         return redirectToDashboard(req);
       }
