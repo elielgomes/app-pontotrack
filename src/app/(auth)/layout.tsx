@@ -25,8 +25,8 @@ export default function AuthLayout({
           </Link>
         </Button>
         <BackgroundGradientAnimation
-          className="flex justify-center items-center h-full"
-          containerClassName="absolute lg:w-3/5 lg:static"
+          containerClassName="absolute lg:w-3/5 lg:relative"
+          className="absolute inset-0"
         >
           <Image
             src="/phone-navigation.webp"
@@ -34,7 +34,7 @@ export default function AuthLayout({
             width={1080}
             height={720}
             priority
-            className="object-cover grayscale w-full h-full opacity-25 object-center"
+            className="object-cover grayscale w-auto h-full opacity-25 object-center"
           />
         </BackgroundGradientAnimation>
         <div className="absolute h-dvh w-full bg-transparent lg:w-2/5 lg:bg-background lg:static">

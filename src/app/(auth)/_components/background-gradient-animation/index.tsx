@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "rgb(22, 86, 204)",
   gradientBackgroundEnd = "rgb(68, 102, 204)",
-  firstColor = "22, 86, 204",
+  firstColor = "68, 102, 204",
   secondColor = "39, 179, 179",
-  thirdColor = "233, 241, 247",
+  thirdColor = "22, 86, 204",
   fourthColor = "187, 214, 229",
-  fifthColor = "220, 226, 243",
-  pointerColor = "140, 100, 255",
+  fifthColor = "22, 86, 204",
+  pointerColor = "22, 86, 204",
   size = "80%",
   blendingValue = "hard-light",
   children,
@@ -56,7 +56,7 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export const BackgroundGradientAnimation = ({
     }
 
     move();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tgX, tgY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
