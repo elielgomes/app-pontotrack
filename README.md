@@ -6,13 +6,13 @@
 
 ## 📌 Introdução
 
-Bem-vindo ao AppTrack! Este projeto é uma aplicação web full-stack desenvolvida para simular um serviço de rastreamento de veículos, proporcionando uma interface responsiva e funcionalidades robustas para uma experiência imersiva.
+Bem-vindo ao **AppTrack**! Este projeto é uma aplicação web front-end desenvolvida para simular um serviço de rastreamento de veículos. A aplicação oferece uma interface responsiva e funcionalidades robustas para proporcionar uma experiência de usuário imersiva e eficiente.
 
 ## ⚙️ Instalação e Configuração
 
 ### 📋 Pré-requisitos
 
-- Node.js >=18
+- [Node.js](https://nodejs.org/) versão 18 ou superior.
 
 ### 🔧 Passos para Configuração
 
@@ -38,42 +38,62 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-4. **Iniciar a Aplicação:**
+4. **Inicie a Aplicação:**
 
 ```bash
 npm run dev
 ```
 
+### 🛠 Conectando ao Backend
+
+Para que o **AppTrack** funcione corretamente, é necessário clonar e configurar o backend (API). Siga os passos abaixo:
+
+1. **Clone o Repositório da API:**
+
+```bash
+git clone https://github.com/elielgomes/api-apptrack.git
+cd api-pontotrack
+```
+
+2. **Siga as Instruções de Configuração da API:**
+
+As instruções para configurar e iniciar a API estão detalhadas no [README da API](https://github.com/elielgomes/api-pontotrack).
+
+3. **Inicie a API:**
+
+Após seguir as instruções no README da API, inicie a API para que o front-end possa se comunicar com ela.
+
 ## ✏️ Descrição do Projeto
 
-AppTrack é uma aplicação web full-stack que oferece funcionalidades de CRUD de usuários, implementadas com boas práticas de desenvolvimento. Utiliza padrões como MVVM, Compositions e segue os princípios SOLID para uma arquitetura sólida e escalável.
+O **AppTrack** é uma aplicação web que oferece funcionalidades de CRUD (Create, Read, Update, Delete) de usuários. A arquitetura da aplicação segue padrões como MVVM e Compositions, além de princípios SOLID, garantindo uma estrutura sólida e escalável.
 
 ## 🛠️ Funcionalidades
 
-- Autenticação de usuário
-- Registro e login de usuários
-- Atualização de informações de usuário
-- Alteração de senha
-- Seleção de tema para a aplicação
+- Autenticação de usuário.
+- Registro e login de usuários.
+- Atualização de informações do usuário.
+- Alteração de senha.
+- Seleção de tema para a aplicação.
 
 ## 🔗 Acesso ao Projeto
 
- Clique [aqui](https://apptrack-coral.vercel.app/) ou acesse pelo link https://apptrack-coral.vercel.app/
+Você pode acessar o projeto clicando [aqui](https://apptrack-coral.vercel.app/) ou pelo link: https://apptrack-coral.vercel.app/
 
- ## 👨🏻‍💻 Tecnologias utilizadas
+## 👨🏻‍💻 Tecnologias Utilizadas
 
-- **React**: Biblioteca JavaScript para criação de interfaces de usuário interativas.
-- **Tailwind CSS**: Framework CSS para estilização eficiente.
-- **Next.js**: Framework React para renderização do lado do servidor.
-- **Tanstack Query**: Biblioteca para gerenciamento de estado e busca de dados no cliente.
-- **Shadcn UI**: Componentes UI para React.
-- **Axios**: Cliente HTTP para realizar requisições.
-- **TypeScript**: Superset do JavaScript que adiciona tipagem estática opcional.
-- **Git/GitHub**: Controle de versão distribuído e plataforma de hospedagem de código-fonte.
-  
+- **[React](https://reactjs.org/)**: Biblioteca JavaScript para criação de interfaces de usuário interativas.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS para estilização eficiente.
+- **[Next.js](https://nextjs.org/)**: Framework React para renderização do lado do servidor.
+- **[Tanstack Query](https://tanstack.com/query)**: Biblioteca para gerenciamento de estado e busca de dados no cliente.
+- **[Shadcn UI](https://shadcn.dev/)**: Componentes UI para React.
+- **[Axios](https://axios-http.com/)**: Cliente HTTP para realizar requisições.
+- **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática opcional.
+- **[Git/GitHub](https://github.com/)**: Controle de versão distribuído e plataforma de hospedagem de código-fonte.
+
 ## 📄 Licença
-Este projeto está sob a licença MIT
+
+Este projeto está sob a licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](https://github.com/elielgomes/app-pontotrack/blob/main/LICENSE.md).
 
 ## ✒️ Autor
 
-Feito por Eliel Gomes
+Feito por [Eliel Gomes](https://github.com/elielgomes).
